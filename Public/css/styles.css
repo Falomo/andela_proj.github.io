@@ -1,0 +1,335 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: arial;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.studentlist{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column
+    /* padding: 2%; */
+}
+.add{
+    height:72px;
+    width:72px;
+    border-radius: 100%;
+    background-color: #68EFAD;
+    position: absolute;
+    top: 88%;
+    left:90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.add > i {
+    font-size: 30px;
+    color: #fff;
+}
+.students{
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    margin: 0 auto;
+}
+.student{
+    height: 108px;
+    width: 108px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    overflow: hidden;
+    background-color: crimson;
+}
+.student > h3{
+    flex-grow: 1;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:100%;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+}
+
+
+/*///////////////////////////////////////
+// FORM STYLES
+///////////////////////////////////////*/
+.create-form{
+    width: 100%;
+    max-width: 500px;
+    left:50%;
+    position: fixed;
+    background: #fff;
+    border-radius: 10px;
+    transform: translate(-50%, -200%);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #68EFAD;
+    margin: 10% auto;
+    overflow: hidden;
+}
+
+.form input {
+    width:70%;
+	margin:10px;
+	height:30px;
+	border-radius:5px;
+	border:1px solid #bdbdbd ;	
+    padding:4px;
+    background-color: #fafafa;
+}
+.create-form > button {
+    height: 50px;
+    width: 100px;
+    font-size: 1.3em;
+    background-color: #F5F5F5;
+    width: 100%;
+    color:#68EFAD;
+    border:none;
+    font-weight: bolder;
+}
+.form{
+    margin: 5% 0 0 0;
+    background-color: #68EFAD;
+    color: #fff;
+    width:100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail{
+    height:100px;
+    width: 400px;
+    background-color: crimson;
+}
+
+.sub{
+    height: 50px;
+    width: 100%;
+    margin-top: 5%;
+    cursor: pointer;
+    color: rgb(53, 145, 99);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*///////////////////////////////////////
+// MODAL STYLES
+///////////////////////////////////////*/
+.modal{
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display:none;
+}
+
+.modal.display{
+    display:block;
+}
+.modal.display > .create-form{
+    animation: open 300ms ease-in-out forwards;
+}
+.modal.close > .create-form{
+    animation: close 500ms ease-in-out forwards;
+}
+.create-form > .cancel{
+    height:25px;
+    width: 25px;
+    margin-left: 80%;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+
+
+div.head{
+    height: 55px;
+    background-color: #d4d;
+    color: #FFF;
+    display: flex;
+    list-style: none;
+    width:100%;
+    /* min-width: 500px;
+    width: 700px; */
+    margin: 0 5px;
+    padding: 2px;
+}
+
+div.head > div, div.new > div{
+    /* padding: 20px; */
+    width:30%;
+    align-content: center;
+    line-height: 55px;
+}
+
+div.new {
+    height: 45px;
+    background-color: #FAFAFA;
+    color: #000;
+    display: flex;
+    width:100%;
+    /* min-width: 500px;
+    width: 700px; */
+    margin: 0 5px;
+    padding: 2px;
+    border-bottom:3px solid #E0E0E0;
+}
+
+div.new.removed-item {
+ animation: removed-item-animation .8s cubic-bezier(.65,-0.02,.72,.29) forwards;
+}
+.options{
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ width: 10% !important;
+ cursor: pointer;
+}
+
+.options > i{
+    font-size:1.3em;
+    text-align: center;
+    line-height: 30px;
+}
+
+/*///////////////////////////////////////
+// LOADER STYLES
+///////////////////////////////////////*/
+
+.hidden{
+    display: none !important;
+}
+.loading{
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spinner{
+    position:relative;
+    display:inline-block;
+    width:100px;
+    height:100px;
+    background-color:#fff;
+    margin:50px;
+    border-radius:100%;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.4);
+}
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width:  50%;
+    bottom: 50%;
+}
+.spinner-2:after, .spinner-2:before{
+    
+        display:block;
+        width:100px;
+        height:100px;
+        content:'';
+        border-radius:100%;
+    
+    }
+.spinner-2:after{
+        top:-4px;
+        left:-4px;;
+        position:absolute;
+        border:4px solid transparent ;
+        border-bottom-color:green;
+        border-top-color:purple;
+        animation:spiny 1s linear infinite;
+    
+    }
+@keyframes spiny{
+        0%{
+                transform:rotate(0deg) scale(1);
+            
+            }
+        50%{
+                transform:rotate(270deg) scale(1.2);
+            
+            }
+        100%{
+                transform:rotate(360deg) scale(1);
+            
+            }
+    
+    }
+
+/*/////////////////////////////////////*/
+@keyframes removed-item-animation {
+0% {
+     opacity: 1;
+     transform: translateX(0);
+ }
+
+ 30% {
+     opacity: 1;
+     transform: translateX(50px);
+ }
+
+ 80% {
+     opacity: 1;
+     transform: translateX(-800px);
+ }
+
+ 100% {
+     opacity: 0;
+     transform: translateX(-800px);
+ }
+}
+
+@keyframes open{
+    0%{
+        transform: translate(-50%, -200%);
+        
+    }
+    70%{
+        transform: translate(-50%, 10%);	
+        
+    }	
+    100%{
+        transform: translate(-50%, 0);
+    }	
+
+}
+
+@keyframes close{
+    0%{
+        transform: translate(-50%, 0%);
+        
+    }
+    20%{
+        transform: translate(-50%, 10%);	
+        
+    }	
+    100%{
+        transform: translate(-50%, -200%);
+    }
+}

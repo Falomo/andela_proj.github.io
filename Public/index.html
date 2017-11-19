@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/styles.css" rel="stylesheet">
+        <script src="https://use.fontawesome.com/046838d362.js"></script>
+        <style>
+            .error{
+                width: 60%;
+                background-color: red;
+                color: white;
+                margin: 0 auto;
+                position: absolute;
+                border-radius: 0px 0px 20px 20px;
+                text-align: center;
+                left: 21%;
+                transform: translateY(-200%)
+            }
+
+            .error.display{
+                animation:display 6s linear infinite forwards;
+            }
+                @keyframes display{
+                    0%{
+                        transform: translateY(-200%);
+                        
+                    }
+                    10%{
+                        transform: translateY(0%);	
+                        
+                    }
+                    90%{
+                        transform: translateY(0%);	
+
+                    }
+
+                    100%{
+                        transform: translateY(-200%);
+                    }	
+
+                }
+
+
+                
+        </style>
+    </head>
+    <body>
+        <div class="error">
+            Check Internet Connectivity
+        </div>
+        <div class="studentlist" >
+            <div class="add">
+                <i class="fa fa-plus"></i> 
+            </div>
+            <div class="students"> 
+                
+            </div>
+        </div>
+        <div class="modal">
+            
+        </div> 
+
+        <div class="loading hidden" >
+            <div class="loader">
+                <div class="spinner spinner-2"></div>
+            </div>
+        </div>
+
+        
+        <script src="./models/model.js"></script>
+        <script src="./controller/app.js"></script>
+        <!-- <script src="./controller/controller.js"></script> -->
+    </body>
+</html>
